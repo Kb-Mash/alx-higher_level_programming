@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for dec in range(0, 100):
     if dec == 99:
-        print(f'{dec:d}')
+        print('{:d}'.format(dec))
     else:
-        print(f'{dec:02}', end=', ')
+        print('{:02}'.formar(dec), end=', ')
