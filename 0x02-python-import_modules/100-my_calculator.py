@@ -1,12 +1,14 @@
 #!/bin/python3
+
 if __name__ == "__main__":
+    """handles basic operations"""
     from calculator_1 import add, sub, mul, div
     import sys
 
-    ops = {'+': add, '-': sub, '*': mul, '/': div}
     if len(sys.argv) - 1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
+    ops = {'+': add, '-': sub, '*': mul, '/': div}
     a = int(sys.argv[1])
     op = sys.argv[2]
     b = int(sys.argv[3])
