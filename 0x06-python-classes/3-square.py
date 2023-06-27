@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""a class Square that defines a square by: (based on 2-square.py)"""
+
 
 class Square:
-    """defines a square by: (based on 2-square.py)"""
+    """defines a square"""
     def __init__(self, size=0):
         """Instantiation with optional size"""
         if not isinstance(size, int):
