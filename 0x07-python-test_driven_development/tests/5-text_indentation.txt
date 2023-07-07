@@ -1,0 +1,23 @@
+# 5-text_indentation.txt
+
+This module defines a text-indentation function ``text_indentation(text)``
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello?")
+    Hello?
+
+    >>> text_indentation("Hello. How are you? I'm fine.")
+    Hello
+    How are you
+    I'm fine
+
+    >>> text_indentation("This is a test.")
+    This is a test
+
+    >>> text_indentation("No punctuation here")
+    No punctuation here
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string

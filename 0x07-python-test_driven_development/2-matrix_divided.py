@@ -5,7 +5,7 @@
 def matrix_divided(matrix, div):
     """Returns a new matrix of results"""
 
-    if not isinstance(matrix, list) or matrix == []:
+    if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) "
                         "of integers/floats")
 
@@ -22,4 +22,4 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
+    return [[round(x / div, 2) for x in row] for row in matrix]
