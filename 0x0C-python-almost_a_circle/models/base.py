@@ -2,6 +2,7 @@
 """a class named Base - will be our superclass"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -101,3 +102,48 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module.
+        Args:
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
+        """
+        """Turtle object"""
+        screen = turtle.Screen()
+        screen.setup(width=800, height=600)
+        screen.bgcolor("white")
+
+        """Turtle object for drawing"""
+        pen = turtle.Turtle()
+        pen.speed(2)
+
+        for rectangle in list_rectangles:
+            pen.penup()
+            pen.goto(rectangle.x, rectangle.y)
+            pen.pendown()
+            pen.forward(rectangle.width)
+            pen.left(90)
+            pen.forward(rectangle.height)
+            pen.left(90)
+            pen.forward(rectangle.width)
+            pen.left(90)
+            pen.forward(rectangle.height)
+            pen.left(90)
+
+        for square in list_squares:
+            pen.penup()
+            pen.goto(square.x, square.y)
+            pen.pendown()
+            pen.forward(square.size)
+            pen.left(90)
+            pen.forward(square.size)
+            pen.left(90)
+            pen.forward(square.size)
+            pen.left(90)
+            pen.forward(square.size)
+            pen.left(90)
+
+        """Close the Turtle graphics window"""
+        turtle.done()
